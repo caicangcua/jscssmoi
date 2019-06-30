@@ -1,123 +1,121 @@
-﻿<div data-options="dxView : { name: 'Profile', title:'@S1_015', toolbar: false } ">
+﻿<div data-options="dxView : {title:'', name: 'Profile'} ">
     <div data-bind="dxCommand: { title: '', id: 'rightmenu', elementAttr:{class:'btnstyle2 menu-colapse'}, onExecute:slideMenu,visible:false}"></div>
-    <div data-bind="dxCommand: { title: '', id: 'overflow' , elementAttr:{class:'logoutmenu',id:'buttonlogout'}, onExecute:function(s,e){logoutmenu(s,e);}}"></div>
-    <div class="ProfileForm" data-options="dxContent : { targetPlaceholder: 'content' } ">
+    <div data-bind="dxCommand: { title: '', id: 'overflow' ,icon:buttonlogout , elementAttr:{class:'logoutmenu',id:'buttonlogout'}, onExecute:function(s,e){logoutmenu(s,e);}}"></div>
+    <div class="ProfileForm" data-options="dxContent : { targetPlaceholder: 'content' } " data-bind="dxDeferRendering: {animation: 'detail-item-rendered', renderWhen: modelIsReady}">
         <div data-bind="dxScrollView: { }">
             <!--<div  data-bind="template: { name: 'giohang-template'}"></div>-->
-            <div style="width: 100%;position: absolute;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);">
+            <div data-bind="visible:!userinfo()">
                 <div class="dathang" style="margin-bottom:0px">
-                    <div class="login screen-dangnhap" style="position: relative;height: 100%;background:rgba(0, 0, 0, 0.2);padding:10px 0px 20px">
+                    <div class="login screen-dangnhap" style="position: relative;height: 100%;background:none;box-shadow:none;padding:10px 0px 20px">
                         <div style="padding-left:25px">
-                            <div class="input">
-                                <input type="tel" placeholder="@S1_018" class="sodienthoai" />
-                                <span><i class="fa fa-phone"></i><span class="buocnhap">*</span></span>
+                            <div>
+                                <div class="input">
+                                    <input type="tel" placeholder="@S1_018" class="dx-texteditor sodienthoai" name="sodt"  value="" style="font-style: normal"/>
+                                    <span style="color: black;"><i class="fa fa-phone"></i><span class="buocnhap">*</span></span>
+                                </div>
+                                <div class="dx-invalid-message dx-overlay">
+                                    <div class="dx-overlay-wrapper dx-invalid-message"
+                                         style="z-index: 1501; position: absolute;    margin-top: -15px;text-align: right;padding-right: 20px;"><div class="dx-overlay-content dx-resizable" style="width: auto; height: auto; z-index: 1501; margin: 0px; left: 0px; top: 0px; transform: translate(-1px, 1px); transition: all 0s ease 0s; max-width: 468px;">@S1_018</div></div>
+                                </div>
                             </div>
-                            <div class="input">
-                                <input type="password" placeholder="@S1_022" class="sodienthoai" style="padding-right: 70px!important;" />
-                                <span><i class="fa fa-key"></i><span class="buocnhap">*</span></span>
-                                <!--<div class="resetpass">
-                                    @S1_023<i style="margin-left: 10px;" class="fa fa-refresh" aria-hidden="true"></i>
-                                </div>-->
+                            <div>
+                                <div class="input">
+                                    <input type="password" placeholder="@S1_022" class="dx-texteditor sodienthoai" style="font-style: normal" name="matkhau" value=""/>
+                                    <span style="color: black;"><i class="fa fa-key"></i><span class="buocnhap">*</span></span>
+                                    <!--<div class="resetpass">
+                                        @S1_023<i style="margin-left: 10px;" class="fa fa-refresh" aria-hidden="true"></i>
+                                    </div>-->
+                                </div>
+                                <div class="dx-invalid-message dx-overlay">
+                                    <div class="dx-overlay-wrapper dx-invalid-message"
+                                         style="z-index: 1501; position: absolute;    margin-top: -15px;text-align: right;padding-right: 20px;"><div class="dx-overlay-content dx-resizable" style="width: auto; height: auto; z-index: 1501; margin: 0px; left: 0px; top: 0px; transform: translate(-1px, 1px); transition: all 0s ease 0s; max-width: 468px;">@S1_022</div></div>
+                                </div>
                             </div>
                         </div>
+                        <div class="feedback">
+                        </div>
                         <div style="position: relative;  padding-top: 20px; z-index:1">
-                            <div data-bind="dxButton: {
-                                text: '@S1_025',
-                                onClick: function () {
-                                }
-                            }"></div>
-                            <div style="width:10px;    display: inline-block;"></div>
-                            <div data-bind="dxButton: {
-                                text: '@S1_024',type:'success',
-                                onClick: function () {
-                                }
-                            }"></div>
+                            <div class="submit a_demo_one dangnhap_button" style="font-size: 1.2em;">
+                                <span><i class="fa fa-sign-in"></i>@signIn</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="view-content profile" data-bind="visible:userinfo">
+                <div class="profile-main-info">
+                    <div class="profile-block logout-block">
+                        <img class="user-photo" data-bind="attr: {src: userphoto}"/>
+                        <div class="hieu-dx-button logout-button">
+                            <div class="bmd-main-btn" style="padding:5px" data-bind="dxButton: { text: '@photo',icon:'photo',onClick:photoeditor,onInitialized:bindinput}"></div>
+                        </div>
+                    </div>
+
+                    <div class="profile-block profile-main-block">
+                        <div class="dx-fieldset contact-block" >
+                            <div class="userinfosave ahieuungclick" data-bind="click:save_action.bind(0),visible:isEditProfile">
+                                <i class="fa fa-floppy-o"></i>
+                            </div>
+                            <div class="frmUserInfor"></div>
+                            <div style="position: relative; text-align:center">
+                                <div data-bind="dxButton: { text: '@changepass','icon':'fa fa-key',type:'danger',elementAttr:{class:'get-to-work bmd-main-btn'},'onClick':changepass}"></div>
+                            </div>
+                        </div>
+                        <h2 style="text-transform: uppercase;">
+                            @S1_018
+                        </h2>
+                        <div class="dx-fieldset notification-block" style="margin: 0px;">
+                            <div style="padding: 10px;font-size:17px" class="lsthieu" name="phone">
+                                <div class="ordersrow" style="">
+                                    <div class="stt">1. </div>
+                                    <div class="listcol-tg">
+                                        <div style="width:100%" class="suarow dx-texteditor"><div class=""><div class="input"><input type="text" placeholder="@require" class="sodienthoai dx-texteditor-input" style="width: 100%;text-align: left;color: black;"></div><div class="dx-invalid-message dx-overlay"><div class="dx-overlay-wrapper dx-invalid-message" style="z-index: 1501; position: absolute;text-align: right;padding-right: 20px;"><div class="dx-overlay-content dx-resizable" style="width: auto; height: auto; z-index: 1501; margin: 0px; left: 0px; top: 0px; transform: translate(-1px, 1px); transition: all 0s ease 0s; max-width: 468px;"></div></div></div></div></div>
+                                    </div>
+                                    <div class="listcol-price">
+                                        <i class="editrow fa ahieuungclick"></i>
+                                        <i class="delrow fa fa-trash-o ahieuungclick"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="lsthieu-additem">
+                                <div style="width:100%"></div>
+                                <span class="canceladd ahieuungclick fa fa-times-circle"></span>
+                                <div data-bind="dxButton: { text: '',icon:'plus',onClick:newlistItem.bind('phone'),type:'normal',elementAttr:{class:'get-to-work bmd-main-btn'}}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-address-info">
+                    <div>
+                        <div class="profile-block profile-address-block billing">
+                            <h2 style="text-transform: uppercase;">
+                                @S1_019
+                            </h2>
+                            <div style="padding: 10px;font-size:17px" class="lsthieu" name="name">
+                            </div>
+                            <div class="lsthieu-additem dx-fieldset">
+                                <div style="width:100%"></div>
+                                <span class="canceladd ahieuungclick fa fa-times-circle"></span>
+                                <div data-bind="dxButton: { text: '',icon:'plus',onClick:newlistItem.bind('name'),type:'normal',elementAttr:{class:'get-to-work bmd-main-btn'}}"></div>
+                            </div>
+                        </div>
+                        <div class="profile-block profile-address-block shipping">
+                            <h2 style="text-transform: uppercase;">
+                                @S1_020
+                            </h2>
+                                  <div style="padding: 10px;font-size:14px" class="lsthieu lstdiachi" name="addr">
+                                  </div>
+                            <div class="lsthieu-additem dx-fieldset">
+                                <div style="width:100%" ></div>
+                                <span class="canceladd ahieuungclick fa fa-times-circle"></span>
+                                <div data-bind="dxButton: { text: '',icon:'plus',onClick:newlistItem.bind('addr'),type:'normal',elementAttr:{class:'get-to-work bmd-main-btn'}}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <!--<div class="slider gx-sidemenu-inner">
-            <ul class="gx-menu" style="display: block;">
-                <li class="home">
-                    <a href="?home" tabindex="0">
-                        <span class="icon entypo home"></span>
-                        <span class="text">Home</span>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li class="news">
-                    <a href="javascript:void(0)" tabindex="1">
-                        <span class="icon entypo newspaper"></span>
-                        <span class="text">News / Events</span>
-                        <span class="arrow"></span>
-                    </a>
-
-                    <ul class="" style="display: block; position: absolute; background: transparent; width: 286px; top: 0px; right: -286px; height: auto; opacity: 0;">
-                        <li><a href="javascript:" class="back"><span class="icon entypo chevron-left "></span><span class="text">Prev | Back</span></a></li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="javascript:" tabindex="2">
-                                <span class="icon entypo pencil"></span>
-                                <span class="text">New Article</span>
-                                <span class="arrow"></span>
-                            </a>
-                            <ul style="display: none;">
-                                <li>
-                                    <a href="?article=false" tabindex="3">
-                                        <span class="icon entypo list"></span>
-                                        <span class="text">Next level...</span>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <a href="?article=true" tabindex="4">
-                                        <span class="icon entypo video"></span>
-                                        <span class="text">Another sub element...</span>
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                            </ul>
-                        </li>
-                        <li class="divider"></li>
-                    </ul>
-                </li>
-                <li class="divider"></li>
-                <li class="gallery">
-                    <a href="?action=galleries" tabindex="5">
-                        <span class="icon entypo picture"></span>
-                        <span class="text">Galleries</span>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li class="users">
-                    <a href="javascript:" tabindex="6">
-                        <span class="icon entypo users"></span>
-                        <span class="text">Users</span>
-                        <span class="arrow"></span>
-                    </a>
-
-                    <ul class="" style="display: block; position: absolute; background: transparent; width: 286px; top: 0px; right: -286px; height: auto; opacity: 0;">
-                        <li><a href="javascript:" class="back"><span class="icon entypo chevron-left "></span><span class="text">Prev | Back</span></a></li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="?login=true" target="_blank" tabindex="7">
-                                <span class="icon entypo user"></span>
-                                <span class="text">Login</span>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                    </ul>
-                </li>
-                <li class="divider"></li>
-                <li class="category">
-                    <a href="javascript:" tabindex="8">
-                        <span class="icon entypo folder"></span>
-                        <span class="text">Categories</span>
-                    </a>
-                </li>
-                <li class="divider"></li>
-            </ul>
-        </div>-->
+        </div>
     </div>
 </div>

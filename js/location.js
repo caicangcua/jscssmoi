@@ -1,1 +1,152 @@
-﻿String.prototype.norm_to_ascii=function(){return unescape(encodeURIComponent(this))},String.prototype.norm_to_unicode=function(){return decodeURIComponent(escape(this))},String.prototype.crypt_sym=function(t){return String.fromCharCode.apply(void 0,this.split("").map(function(e){return e.charCodeAt(0)^(t||13)}))};var localDB={supports_html5_storage:function(){try{return"localStorage"in window&&null!==window.localStorage}catch(t){return!1}},supports_json:function(){try{return"JSON"in window&&null!==window.JSON}catch(t){return!1}},IsValid:function(){return this.supports_html5_storage()&&this.supports_json()},addOrUpdateStorage:function(t,e,i){var r=this.getStorage(i);r[t]=e,this.saveStorage(r,i)},getStorage:function(t){var e=window.localStorage[this.folder[t]],i={};return void 0!==e&&(i=window.JSON.parse(e)),i},hasInStorage:function(t,e){return t in this.getStorage(e)},removeFromStorage:function(t,e,i){if(this.hasInStorage(t,i)){var r=this.getStorage(i);delete r[t],this.saveStorage(r,i)}},saveStorage:function(t,e){window.localStorage[this.folder[e]]=window.JSON.stringify(t)},folder:{0:"_onewaywithoutreturn",1:"_viewtmp"},exe:function(t,e,i,r){if(this.IsValid)switch(t){case"add":this.addOrUpdateStorage(e,i,r);break;case"get":var o=this.getStorage(r)[e];return o||"";case"rmv":this.removeFromStorage(e,r);break;case"rmvall":localStorage.removeItem(this.folder[r])}}},LogDB=new HashTable;function qryURL(t){if((t=t.split("?")).length>1&&(t=t[1].split("&")),""==t)return{};for(var e={},i=0;i<t.length;++i){var r=t[i].split("=",2);1==r.length?e[r[0]]="":e[r[0]]=decodeURIComponent(r[1].replace(/\+/g," "))}return e}function HashTable(t){for(var e in this.length=0,this.items={},t)t.hasOwnProperty(e)&&(this.items[e]=t[e],this.length++);this.setItem=function(t,e){var i=void 0;return this.hasItem(t)?i=this.items[t]:this.length++,this.items[t]=e,i},this.getItem=function(t){return this.hasItem(t)?this.items[t]:void 0},this.hasItem=function(t){return this.items.hasOwnProperty(t)},this.removeItem=function(t){return this.hasItem(t)?(previous=this.items[t],this.length--,delete this.items[t],previous):void 0},this.keys=function(){var t=[];for(var e in this.items)this.hasItem(e)&&t.push(e);return t},this.values=function(){var t=[];for(var e in this.items)this.hasItem(e)&&t.push(this.items[e]);return t},this.each=function(t){for(var e in this.items)this.hasItem(e)&&t(e,this.items[e])},this.clear=function(){this.items={},this.length=0}}var _$userstate=localDB.exe("get","userstate",null,0),_$locate="en";(_$locate=localDB.exe("get","Globalize",null,0))&&""!=_$locate||(_$locate="vi");
+﻿String.prototype.norm_to_ascii = function () { return unescape(encodeURIComponent(this)) };
+String.prototype.norm_to_unicode = function () { return decodeURIComponent(escape(this)) };
+String.prototype.crypt_sym = function (k) { return String.fromCharCode.apply(undefined, this.split("").map(function (c) { return c.charCodeAt(0) ^ (k || 13) })) };
+
+var localDB = {
+    supports_html5_storage: function () {
+        try { return 'localStorage' in window && window['localStorage'] !== null; } catch (e) { return false; }
+    }, supports_json: function () { try { return 'JSON' in window && window['JSON'] !== null; } catch (e) { return false; } }
+            , IsValid: function () { return this.supports_html5_storage() && this.supports_json() }
+            , addOrUpdateStorage: function (id, label, F) {
+                var data = this.getStorage(F);
+                data[id] = label;
+                this.saveStorage(data, F);
+            }
+            , getStorage: function (F) {
+                var current = window.localStorage[this.folder[F]];
+                var data = {};
+                if (typeof current != "undefined") data = window.JSON.parse(current);
+                return data;
+            }
+            , hasInStorage: function (id, F) {
+                return (id in this.getStorage(F));
+            }
+            , removeFromStorage: function (id, F) {
+                if (this.hasInStorage(id, F)) {
+                    var data = this.getStorage(F);
+                    delete data[id];
+                    this.saveStorage(data, F);
+                }
+            }
+            , saveStorage: function (data, F) {
+                window.localStorage[this.folder[F]] = window.JSON.stringify(data);
+            }
+    , folder: { 0: "_onewaywithoutreturn", 1: "_viewtmp" }
+    , exe: function (act, id, val, F) {
+        if (this.IsValid) {
+            switch (act) {
+                case 'add': {
+                    this.addOrUpdateStorage(id, val, F);
+                    break;
+                }
+                case 'get': {
+                    var rst = this.getStorage(F)[id];
+                    if (rst) { return rst; } else { return ''; };
+                    break;
+                }
+                case 'rmv': {
+                    this.removeFromStorage(id, F);
+                    break;
+                }
+                case 'rmvall': {
+                    localStorage.removeItem(this.folder[F]);
+                    break;
+                }
+            }
+        }
+    }
+}
+, LogDB = new HashTable();
+function qryURL(a) {
+    a = a.split('?');
+    if (a.length > 1) a = a[1].split('&');
+    //
+    if (a == "") return {};
+    var b = {};
+    for (var i = 0; i < a.length; ++i) {
+        var p = a[i].split('=', 2);
+        if (p.length == 1)
+            b[p[0]] = "";
+        else
+            b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+    }
+    return b;
+};
+function HashTable(obj) {
+    this.length = 0;
+    this.items = {};
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            this.items[p] = obj[p];
+            this.length++;
+        }
+    }
+
+    this.setItem = function (key, value) {
+        var previous = undefined;
+        if (this.hasItem(key)) {
+            previous = this.items[key];
+        }
+        else {
+            this.length++;
+        }
+        this.items[key] = value;
+        return previous;
+    }
+
+    this.getItem = function (key) {
+        return this.hasItem(key) ? this.items[key] : undefined;
+    }
+
+    this.hasItem = function (key) {
+        return this.items.hasOwnProperty(key);
+    }
+
+    this.removeItem = function (key) {
+        if (this.hasItem(key)) {
+            previous = this.items[key];
+            this.length--;
+            delete this.items[key];
+            return previous;
+        }
+        else {
+            return undefined;
+        }
+    }
+
+    this.keys = function () {
+        var keys = [];
+        for (var k in this.items) {
+            if (this.hasItem(k)) {
+                keys.push(k);
+            }
+        }
+        return keys;
+    }
+
+    this.values = function () {
+        var values = [];
+        for (var k in this.items) {
+            if (this.hasItem(k)) {
+                values.push(this.items[k]);
+            }
+        }
+        return values;
+    }
+
+    this.each = function (fn) {
+        for (var k in this.items) {
+            if (this.hasItem(k)) {
+                fn(k, this.items[k]);
+            }
+        }
+    }
+
+    this.clear = function () {
+        this.items = {}
+        this.length = 0;
+    }
+}
+
+var _$userstate = localDB.exe('get', 'userstate', null, 0), _$locate = 'en', _$locate = localDB.exe('get', 'Globalize', null, 0), lgmk = localDB.exe('get', 'lgmk', null, 2);
+if (!_$locate  || _$locate == '') { _$locate = 'vi' };

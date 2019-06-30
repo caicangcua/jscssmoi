@@ -218,3 +218,113 @@
         left: auto;
         top: 2%;
     }
+.lsthieu input{
+    width: 40px;
+    border: none;
+    color: white;
+    text-align: right;
+    font-size: 15px;
+    padding: 0px 0px;
+}
+.lsthieu .input {
+     padding: 0px 10px;
+}
+.lsthieu.lstdiachi input {
+    font-size:14px;
+}
+.listcol-price i {
+    position:relative;
+    padding:8px 10px;
+    font-size: 20px;
+}
+.listcol-price{
+    justify-content: center;
+    display: flex;
+    align-items: center; 
+    padding-right:0px;
+    width: 100px;
+}
+.lsthieu .defitem {
+    color:blue;
+}
+    .lsthieu .defitem .delrow {
+        display:none;
+    }
+        .lsthieu .rowediting.defitem .delrow {
+            display:block;
+        }
+
+.listcol-tg {
+    text-align:left;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 2px;
+}
+
+.lsthieu .stt {
+    width:50px;
+}
+.lsthieu .rowediting .listcol-tg span {
+    display:none!important;
+}
+.lsthieu  .listcol-price .editrow:before {
+    content: "\f040";
+}
+.lsthieu .rowediting .listcol-price .editrow:before {
+    content: "\f0c7";
+}
+.lsthieu .rowediting .listcol-price .delrow:before {
+        content: "\f0e2";
+        color:black;
+}
+
+
+.fieldvalchanged {
+    border-color:red!important;
+}
+.lsthieu-additem {
+    text-align: right;
+    padding: 0px 10px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+    .lsthieu-additem .canceladd {
+        position:relative;
+        text-align: center;
+        padding: 8px 10px;
+        font-size: 20pt;
+        display:none;
+        cursor:pointer;
+    }
+    .lsthieu-additem .bmd-main-btn {
+        margin:0px;
+    }
+.fieldvalchanged input{
+    color:red!important;
+    padding-right:35px;
+}
+    .fieldvalchanged .dx-radiobutton {
+        color:red;
+    }
+    .fieldvalchanged span {
+        position: absolute;
+        margin-left: -32px;
+        font-size: 25px;
+        padding: 2px;
+        border-radius: 100%;
+        background-color:rgba(0, 0, 0, 0.2);
+        margin-top: 3px;
+        cursor:pointer;
+    }
+.fieldvalchanged:after {
+    right: 30px!important;
+}
+.userinfosave {
+    position: absolute;right:30px;font-size: 20pt;margin-top: -10px;cursor:pointer;width: 40px;height: 40px;text-align: center;
+}
+.changematkhau .dathang {
+    display:none;
+}

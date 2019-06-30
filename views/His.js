@@ -10,6 +10,7 @@ ComApp.Store.His = function (params) {
             bullhorn._$element.css({ 'left': '45px', 'opacity': '0.5' });
             ComApp.app.navigate("Thumbnail", { root: false });
         }
+        , buttonlogout: buttonlogout
 	}
 	return viewModel
 }
