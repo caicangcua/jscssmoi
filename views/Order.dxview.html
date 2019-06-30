@@ -1,0 +1,123 @@
+﻿<div data-options="dxView : {disableCache:true, name: 'Order', title:'@S2_001', toolbar: false } ">
+    <div data-bind="dxCommand: { title: '', id: 'overflow' , elementAttr:{class:'logoutmenu',id:'buttonlogout'}}"></div>
+
+    <!--<i class="fa fa-bicycle fa-5x circle-icon" />-->
+
+    <div data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div data-options="dxViewPlaceholder: { viewName: 'OrdersPartial' }"></div>
+    </div>
+
+
+</div>
+
+<div data-options="dxView : { name: 'OrdersPartial' } " class="orders-partial-content">
+    <div id="dxScrollView_food" data-bind="dxScrollView: {onInitialized:scrollInit}">
+        <div style="height: 100%">
+            <div class="waitorder1" data-bind="visible:emptyWH">
+                <span class="fa fa-shopping-basket"></span>
+                <h1>@S2_002</h1>
+                <div class="donggoi-empty"></div>
+            </div>
+                <div class="dondathang-list" data-bind="visible:!emptyWH()">
+                    <div class="ordersrow">
+                        <div class="orderscol-tg">
+                            <span style="float:left">21 thg 8, 2013</span>
+                            <div class="orderstime ">
+                                <span>10:00</span>
+                            </div>
+                        </div>
+                        <div class="orderscol-name" style="width:100%">
+                            <div>Adams Pearmain + 66 6.75" Hi Raw + Sidecuts 2s</div>
+                        </div>
+                        <div class="orderscol-price">
+                            <span class="orderarrow"></span>
+                            <span class="fa"></span>
+                            <div>$128</div>
+                        </div>
+                    </div>
+                    <div class="orderprocess">
+                        <div class="circle" data_fuck="css:cssdat_hang">
+                            <span class="label fa dat-hang"></span>
+                            <span class="title" data_fuck="text:dat_hang"></span>
+                        </div>
+                        <span class="bar"></span>
+
+
+                        <div class="circle" data_fuck="css:csscho_duyet">
+                            <span class="label fa cho-duyet"></span>
+                            <span class="title" data_fuck="text:cho_duyet"></span>
+                        </div>
+                        <span class="bar"></span>
+
+                        <div class="circle" data_fuck="css:cssdong_goi">
+                            <span class="label fa dong-goi"></span>
+                            <span class="title" data_fuck="text:dong_goi"></span>
+                        </div>
+                        <span class="bar"></span>
+
+                        <div class="circle" data_fuck="css:cssgiao_hang">
+                            <span class="label fa giao-hang"></span>
+                            <span class="title" data_fuck="text:giao_hang"></span>
+                        </div>
+                    </div>
+                    <div class="thaihoa">
+                        <ul class="tempfuck" style="">
+                            <li class="event" data-date="15:31 15/thg4 2019">
+                                <div class="member-infos">
+                                    <h1 class="member-title">Sửa Đơn Hàng</h1>
+                                    <div class="member-location" style="display: block;">
+                                        <h2>-</h2>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="position: relative; z-index:1">
+                    <div class="dathang" style="margin-bottom:0px;    margin-top: 50px;">
+                        <div class="login screen-dangnhap section-timkiem">
+                            <div data-bind="css:cssfind_changed">
+                                <div class="dx-fieldset-header" style="margin: 0px;padding-top: 10px;">@S2_003</div>
+                                <ul class="panel_timkiem">
+                                    <li>
+                                        <label class="dx-field-item-label dx-field-item-label-location-top" style="text-align:left;padding-left: 10px;">
+                                            @S2_004
+                                        </label>
+                                        <div data-bind="dxDateBox: {width:'100%',
+    min: new Date(2019, 0, 1),
+    max: new Date(2050, 11, 31),
+                                     useMaskBehavior: true,
+displayFormat: 'dd/MMM/yyyy',
+        type: 'date',
+    value: TuNgay,onValueChanged:findDateChanged.bind('0')
+}"></div>
+                                    </li>
+                                    <li>
+                                        <label class="dx-field-item-label dx-field-item-label-location-top" style="text-align: left;padding-left: 10px;">
+                                            @S2_005
+                                        </label>
+                                        <div data-bind="dxDateBox: {width:'100%',
+    min: new Date(2019, 0, 1),
+    max: new Date(2050, 11, 31),
+                                                                          useMaskBehavior: true,
+displayFormat: 'dd/MMM/yyyy',
+        type: 'date',
+    value: DenNgay,onValueChanged:findDateChanged.bind('1')
+}"></div>
+                                    </li>
+                                </ul>
+                                <div style="position: relative; z-index:1">
+                                    <div class="get-to-work bmd-main-btn" style="padding:2px 10px 2px 5px" data-bind="dxButton: {
+                                text: '@Search ...','icon':'find',
+                                onClick: TimKiem
+                            }">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

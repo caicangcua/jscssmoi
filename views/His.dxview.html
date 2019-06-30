@@ -1,0 +1,87 @@
+﻿<div data-options="dxView : { name: 'His', title:'@S3_001', toolbar: false } ">
+    <div data-bind="dxCommand: { title: '', id: 'overflow' , elementAttr:{class:'logoutmenu',id:'buttonlogout'}, onExecute:function(s,e){logoutmenu(s,e);}}"></div>
+    <div data-options="dxContent : { targetPlaceholder: 'content' }"  data-bind="dxScrollView: {disabled:true }">
+
+
+        <div class="waitorder">
+            <div class="cbp-pgoptions" style="background: none;box-shadow: none;position:absolute;color:gainsboro">
+                <div style="position: absolute;height: 500px;width: 100%;">
+                    <i class="cbp-gift fa fa-gift fa-pulse ongift"></i>
+                </div>
+            </div>
+            <h1>@S3_002</h1>
+            <div class="donggoi-empty"></div>
+        </div>
+
+        <div id="frm-gift" class="sp-container" style="display:none">
+            <div class="cbp-pgcontainer">
+                <ul class="cbp-pggrid">
+                    <li>
+                        <div class="cbp-pgcontent">
+                            <div class="cbp-pgitem">
+                                <div class="info-tiles tiles-toyo" data-bind="click: frmkhuyenmai">
+                                    <div class="tiles-heading">Profit</div>
+                                    <div class="tiles-body-alt">
+                                        <!--i class="fa fa-bar-chart-o"></i-->
+                                        <div class="text-center"><span class="text-top">$</span>854</div>
+                                        <small>+8.7% from last period</small>
+                                    </div>
+                                    <div class="tiles-footer">more info</div>
+                                </div>
+                            </div><!-- /cbp-pgitem -->
+                        </div><!-- cbp-pgcontent -->
+                    </li>
+                    <li>
+                        <div class="cbp-pgcontent">
+                            <div class="cbp-pgitem">
+                                <div class="info-tiles tiles-alizarin" data-bind="click:frmthumbnail">
+                                        <div class="tiles-heading">Orders</div>
+                                        <div class="tiles-body-alt">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            <div class="text-center">57</div>
+                                            <small>new orders received</small>
+                                        </div>
+                                        <div class="tiles-footer">manage orders</div>
+                                </div>
+                            </div><!-- /cbp-pgitem -->
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cbp-pgcontent">
+                            <div class="cbp-pgitem">
+                                <div class="info-tiles tiles-success">
+                                    <div class="tiles-heading">Game</div>
+                                    <div class="tiles-body-alt">
+                                        <!--i class="fa fa-money"></i-->
+                                        <div class="text-center"><span class="text-top">$</span>22.7<span class="text-smallcaps">k</span></div>
+                                        <small>-13.5% from last week</small>
+                                    </div>
+                                    <div class="tiles-footer">go to accounts</div>
+                                </div>
+                            </div><!-- /cbp-pgitem -->
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cbp-pgcontent">
+                            <div class="cbp-pgitem">
+                                <div class="info-tiles tiles-orange">
+                                    <div class="tiles-heading">Members</div>
+                                    <div class="tiles-body-alt">
+                                        <i class="fa fa-group"></i>
+                                        <div class="text-center">109</div>
+                                        <small>new users registered</small>
+                                    </div>
+                                    <div class="tiles-footer">manage members</div>
+                                </div>
+                            </div><!-- /cbp-pgitem -->
+                        </div>
+                    </li>
+                    <li class="chew-cell--ghost"></li>
+                    <li class="chew-cell--ghost">13</li>
+                    <li class="chew-cell--ghost">14</li>
+                </ul><!-- /cbp-pggrid -->
+            </div><!-- /cbp-pgcontainer -->
+        </div>
+
+    </div>
+</div>

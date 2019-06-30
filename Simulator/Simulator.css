@@ -1,0 +1,841 @@
+﻿.dx-simulator
+{
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.dx-simulator-wrapper {
+    margin: 0 auto;
+    z-index:-1;
+
+    /*display: flex;
+    justify-content: center;
+    align-items: center;*/
+}
+
+.dx-simulator iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #333;
+}
+
+.dx-simulator-back-wrapper {
+    position: relative;
+}
+
+/* iPhone */
+.dx-simulator-iphone-p {
+    width: 320px;
+    height: 480px;
+    padding: 154px 60px 168px;
+    background: url(images/iphone-p.png) 0 0 no-repeat;
+}
+
+.dx-simulator-iphone-l {
+    width: 480px;
+    height: 320px;
+    padding: 50px 158px 70px 164px;
+    background: url(images/iphone-l.png) 0 0 no-repeat;
+}
+
+/* iPhone 5 */
+.dx-simulator-iphone5-p {
+    width: 320px;
+    height: 568px;
+    padding: 154px 60px 168px 65px;
+    background: url(images/iphone5-p.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+.dx-simulator-iphone5-l {
+    width: 568px;
+    height: 320px;
+    padding: 65px 158px 70px 147px;
+    background: url(images/iphone5-l.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+/* iPhone 6 */
+.dx-simulator-iphone6-p {
+    width: 380px;
+    height: 677px;
+    padding: 154px 55px 140px 55px;
+    background: url(images/iphone6-p.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+.dx-simulator-iphone6-l {
+    width: 677px;
+    height: 380px;
+    padding: 65px 150px 65px 147px;
+    background: url(images/iphone6-l.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+/* iPhone 6 Plus */
+.dx-simulator-iphone6plus-p {
+    width: 540px;
+    height: 960px;
+    padding: 154px 60px 155px 60px;
+    background: url(images/iphone6p-p.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+.dx-simulator-iphone6plus-l {
+    width: 960px;
+    height: 540px;
+    padding: 65px 150px 65px 147px;
+    background: url(images/iphone6p-l.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+/* iPhone 7 */
+.dx-simulator-iphone7-p {
+    width: 330px;
+    height: 580px;
+    padding: 160px 55px 168px 55px;
+    background: url(images/iphone7-p.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+.dx-simulator-iphone7-l {
+    width: 580px;
+    height: 330px;
+    padding: 65px 150px 65px 155px;
+    background: url(images/iphone7-l.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+/* iPad */
+.dx-simulator-ipad-p {
+    width: 768px;
+    height: 1024px;
+    padding: 165px 173px 202px;
+    background: url(images/ipad-p.png) 0 0 no-repeat;
+}
+
+.dx-simulator-ipad-l {
+    width: 1024px;
+    height: 768px;
+    padding: 158px 187px 188px 180px;
+    background: url(images/ipad-l.png) 0 0 no-repeat;
+}
+
+/* iPad Mini */
+.dx-simulator-ipadmini-p {
+    width: 768px;
+    height: 1024px;
+    padding: 200px 173px 202px;
+    background: url(images/ipad-mini-p.png) 0 0 no-repeat;
+    background-position: center;
+}
+
+.dx-simulator-ipadmini-l {
+    width: 1024px;
+    height: 768px;
+    padding: 158px 185px 160px 184px;
+    background: url(images/ipad-mini-l.png) 0 0 no-repeat;
+    background-position: center;
+    margin-top:-70px;
+}
+
+/* Android phone */
+.dx-simulator-androidphone-p {
+    width: 360px;
+    height: 590px;
+    padding: 70px 20px 128px 15px;
+    background: url(images/androidphone-p.png) 0 0 no-repeat;
+    /*margin-top: 50px;*/
+}
+
+.dx-simulator-androidphone-p .dx-simulator-back {
+    left: 50px;
+    position: absolute;
+    width: 60px;
+    height: 50px;    
+    cursor: pointer;
+}
+
+.dx-simulator-androidphone-l {
+    width: 590px;
+    height: 360px;
+    padding: 17px 128px 20px 70px;
+    background: url(images/androidphone-l.png) 0 0 no-repeat;
+    /*margin-top: 100px;*/
+}
+
+.dx-simulator-androidphone-l .dx-simulator-back {
+    position: absolute;
+    top: -110px;
+    left: 480px;
+    width: 50px;
+    height: 60px;
+    cursor: pointer;
+}
+
+/* Android tablet */
+.dx-simulator-androidtablet-p {
+    width: 575px;
+    height: 815px;
+    padding: 198px 147px 243px 146px;
+    background: url(images/androidtablet-p.png) 0 0 no-repeat;
+}
+
+.dx-simulator-androidtablet-p .dx-simulator-back {
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.dx-simulator-androidtablet-l {
+    width: 855px;
+    height: 534px;
+    padding: 123px 183px 176px 197px;
+    background: url(images/androidtablet-l.png) 0 0 no-repeat;
+}
+
+.dx-simulator-androidtablet-l .dx-simulator-back {
+    position: absolute;
+    width: 100px;
+    height: 60px;
+    cursor: pointer;
+}
+
+.dx-simulator-nexus7-p {
+    width: 608px;
+    height: 965px;
+}
+.dx-simulator-nexus7-l {
+    width: 965px;
+    height: 608px;
+}
+
+
+/* Win10 Phone */
+.dx-simulator-win10phone-p {
+    background: url(images/Win8Phone.png) no-repeat 50% 50%;
+    width: 331px;
+    height: 568px;
+    padding: 123px 41px 131px 42px;
+}
+
+.dx-simulator-win10phone-l {
+    background: url(images/Win8Phone-l.png) no-repeat 50% 50%;
+    width: 568px;
+    height: 330px;
+    padding: 41px 130px 42px 123px;
+}
+
+.dx-simulator-win10phone-p .dx-simulator-back {
+    position: absolute;
+    width: 100px;
+    height: 80px;
+    cursor: pointer;
+    top: 4px;
+    left: -4px;
+}
+
+.dx-simulator-win10phone-l .dx-simulator-back {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    cursor: pointer;
+    top: -100px;
+    left: 573px;
+}
+
+/* Nokia 920 */
+.dx-simulator-nokia920-p {
+    width: 461px;
+    height: 768px;
+}
+.dx-simulator-nokia920-l {
+    width: 768px;
+    height: 461px;
+}
+
+/* Tizen */
+.dx-simulator-tizen-p {
+    width: 361px;
+    height: 640px;
+    padding: 96px 48px 103px 48px;
+    background: url(images/tizen-p.png) 0 0 no-repeat;
+}
+
+.dx-simulator-tizen-p .dx-simulator-back {
+    top: 30px;
+    left: 272px;
+    position: absolute;
+    width: 50px;
+    height: 30px;    
+    cursor: pointer;
+}
+
+.dx-simulator-tizen-l {
+    width: 640px;
+    height: 360px;
+    padding: 45px 103px 49px 96px;
+    background: url(images/tizen-l.png) 0 0 no-repeat;
+}
+
+.dx-simulator-tizen-l .dx-simulator-back {
+    position: absolute;
+    top: -330px;
+    left: 670px;
+    width: 35px;
+    height: 50px;
+    cursor: pointer;
+}
+
+
+/* Generic phone */
+.dx-simulator-genericphone-p {
+    width: 360px;
+    height: 640px;
+    padding: 107px 62px 143px;
+    background: url(images/generic-p.png) 0 0 no-repeat;    
+}
+
+
+
+/* MS Surface */
+
+.dx-simulator-mssurface-l {
+    width: 1366px;
+    height: 768px;
+    padding: 130px 154px;
+    background: url(images/mssurface-l.png) 0 0 no-repeat;
+}
+
+.dx-simulator-mssurface-p {
+    height: 1366px;
+    width: 768px;
+    padding: 154px 130px;
+    background: url(images/mssurface-p.png) 0 0 no-repeat;
+}
+
+/* Desktop */
+.dx-simulator-desktop-p {
+    background: white;
+    width: 544px;
+    border-radius: 7px;
+    height: 766px;
+    padding: 30px;
+    margin-top: 53px;
+}
+
+.dx-simulator-desktop-l {
+    background: white;
+    width: 766px;
+    border-radius: 7px;
+    height: 600px;
+    padding: 30px;
+    margin-top: 53px;
+}
+
+.dx-simulator-desktop_1280x720-p {
+    width: 720px;
+    height: 1280px;
+}
+.dx-simulator-desktop_1280x720-l {
+    width: 1280px;
+    height: 720px;
+}
+
+.dx-simulator-desktop_1440x900-p {
+    width: 900px;
+    height: 1440px;
+}
+.dx-simulator-desktop_1440x900-l{
+    width: 1440px;
+    height: 900px;
+}
+
+.dx-simulator-desktop_1920x1080-p {
+    width: 1080px;
+    height: 1920px;
+}
+.dx-simulator-desktop_1920x1080-l {
+    width: 1920px;
+    height: 1080px;
+}
+
+.simulator-small-height .dxm-simulator-desktop-l {
+    height: 692px;
+}
+
+.dx-simulator.dx-simulator-ipadmini-p, .dx-simulator.dx-simulator-ipadmini-l {
+    -webkit-transform: scale(.8);
+       -moz-transform: scale(.8);
+        -ms-transform: scale(.8);
+         -o-transform: scale(.8);
+            transform: scale(.8);
+
+    -webkit-transform-origin: center 0;
+       -moz-transform-origin: center 0;
+        -ms-transform-origin: center 0;
+         -o-transform-origin: center 0;
+            transform-origin: center 0;
+}
+
+
+.dx-simulator.simple-chrome {
+    background: none;
+    padding: 36px;
+    border-radius: 30px;
+    border: solid 11px transparent;
+}
+.dx-simulator.simple-chrome:before {
+    top: -6px;
+    left: -6px;
+    position: absolute;
+    z-index: -1;
+    border-radius: 30px;
+    border: solid 6px transparent;
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-shadow:  inset 0 0 0 1px rgba(0,0,0,1), 0 0 0 3px rgba(0,0,0,1);
+    content: ""
+}
+
+.dx-simulator.empty-chrome {
+    background: none;
+    padding: 0;
+}
+
+
+
+
+ /*<style>*/
+        html {
+            height: 100%;
+        }
+
+        body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100%;
+            color: #a6a6a6;
+            background: #6a6a6a;
+            font-family: Helvetica Neue, Helvetica;
+            font-size: 100%;
+            font-weight: 300;
+        }
+
+        .clearfix:after {
+            display: block;
+            visibility: hidden;
+            clear: both;
+            height: 0;
+            content: ".";
+            line-height: 0;
+        }
+
+
+        .menu-link {
+          position: fixed;
+          font-size: 1.5em;
+          top:10px;
+          margin-left:5px;
+        }
+
+        .menu-link:link,
+        .menu-link:visited {
+          color: #fff;
+          background-color: red;
+          border-radius: 4px;
+          padding: .2em .4em;
+          text-decoration: none;
+        }
+
+        .menu-link:hover,
+        .menu-link:active {
+          color: #25B89A;
+          background: rgba(0, 0, 0, .6);
+        }
+
+        .panel {
+          background: #2C3E50;
+          z-index: 9999;
+          position: fixed;
+          left: -15.625em; /*or width of your navigation panel*/
+          width: 15.625em; /*should match the above value*/
+          box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+        }
+.virtualkeyboard {
+    height:300px!important;
+}
+
+
+        .wrapper {
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: block;
+            width: 120px;
+            height: 100px;
+            margin: 20px 10px;
+            background: url(https://caicangcua.github.io/jscss/images/demoimg.jpg) 0 0 no-repeat;
+            background-size: 100%;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 100%;
+            /*background: #292929;
+            min-height: 900px;*/
+            z-index: 1;
+        }
+
+        .menu {
+            margin-top: 20px;
+        }
+
+            .menu ul {
+                list-style-type: none;
+            }
+
+                .menu ul li a {
+                    display: block;
+                    height: 60px;
+                    padding-left: 15px;
+                    text-decoration: none;
+                    color: #a6a6a6;
+                    font-size: 18px;
+                    line-height: 60px;
+                }
+                    .menu ul li a.active {
+                        width: 135px;
+                        color: #fff;
+                        background: #f6921e;
+                        font-size: 22px;
+                    }
+
+                    .menu ul li a.selected {
+                        background-color: #f6a547 !important;
+                        color: white;
+                    }
+
+        .qr-code-container {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+        }
+
+        .qr-code {
+            display: block;
+            width: 141px;
+            height: 141px;
+            margin: 0 auto;
+            cursor: pointer;
+            border: 0;
+        }
+
+        .qr-code-large {
+            display: block;
+            width: 512px;
+            height: 512px;
+            margin: 0 auto;
+            cursor: pointer;
+            border: 0;
+        }
+
+        .qr-code-container p {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .courier-app-links {
+            margin-bottom: 20px;
+        }
+
+            .courier-app-links a {
+                text-decoration: none;
+                color: #F6921E;
+            }
+
+                .courier-app-links a:hover {
+                    text-decoration: underline;
+                }
+
+        .main {
+            position: relative;
+            /*margin-left: 220px;*/
+            /*padding-top: 100px;*/
+            min-height: 100%;
+            /*margin-bottom: -59px;
+            padding-bottom: 40px;*/
+            overflow: hidden;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+
+        .toolbar {
+            position: fixed;
+            width: 50px;
+            top: 80px;
+            /*left: 0;*/
+            /*margin-right: 20px;*/
+            z-index: 0;
+            background: #6a6a6a;
+            border-radius: 0 0 0 6px;
+        }
+
+            /*.toolbar.ios {
+            width: 410px;
+        }
+        .toolbar.android {
+            width: 400px;
+        }*/
+
+            .toolbar .os-version-chooser,
+            .toolbar .android-version-chooser {
+                display: none;
+            }
+
+            .toolbar.ios .os-version-chooser,
+            .toolbar.android .android-version-chooser {
+                display: block;
+            }
+
+            .toolbar .os-version-chooser + .separator,
+            .toolbar .android-version-chooser + .separator {
+                display: none;
+            }
+
+            .toolbar.ios .os-version-chooser + .separator,
+            .toolbar.android .android-version-chooser + .separator {
+                display: block;
+            }
+
+            .toolbar ul {
+                /*float: left;*/
+                list-style-type: none;
+            }
+
+                .toolbar ul:nth-child(1),
+                .toolbar ul:nth-child(3) {
+                    /*float: left;*/
+                    list-style-type: none;
+                }
+
+        .separator {
+            /*float: left;*/
+            height : 1px;
+            width: 27px;
+            margin: 27px 10px 0 10px;
+            background: white;
+        }
+
+        .toolbar ul li {
+            /*float: left;*/
+            background:#6a6a6a;
+            margin: 17px 2px 0 2px;
+        }
+
+            .toolbar ul li a {
+                display: block;
+                width: 47px;
+                height: 47px;
+            }
+
+                .toolbar ul li a.active {
+                    background-color: #930fea;
+                    color: white;
+                }
+
+                
+              .toolbar ul li a:not(.active):hover {
+                         background-color: rgba(0, 0, 0, .6);
+                    }
+
+        .orientation-p {
+            background: url(../images/orientation-p.png) center center no-repeat;
+        }
+
+        .orientation-l {
+            background: url(../images/orientation-l.png) center center no-repeat;
+        }
+
+        .size-half {
+            background: url(../images/size-half.png) center center no-repeat;
+        }
+
+        .size-one {
+            background: url(../images/size-one.png) center center no-repeat;
+        }
+
+        .copyright {
+            float: right;
+            width: 148px;
+            height: 29px;
+            background: url(../images/copyright.png) 0 0 no-repeat;
+            margin-bottom: 30px;
+            margin-right: 30px;
+        }
+
+        .device-chooser [data-device="win10Phone"] {
+            -ms-word-wrap: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            -ms-text-overflow: ellipsis;
+            -o-text-overflow: ellipsis;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .device-chooser > li {
+            position: relative;
+        }
+
+            .device-chooser > li > a:hover {
+                background-color: #f6a547 !important;
+                color: white;
+            }
+
+        .device-chooser .sub-menu {
+            background: #f6a547;
+            left: 150px;
+            top: 0px;
+            display: none;
+            position: absolute;
+            min-width: 145px;
+            z-index: 10001;
+        }
+
+            .device-chooser .sub-menu li a {
+                padding: 5px 5px 5px 15px;
+                color: white;
+                cursor: pointer;
+                font-size: 18px !important;
+            }
+
+                .device-chooser .sub-menu li a.active {
+                    color: black;
+                }
+
+                .device-chooser .sub-menu li a:hover {
+                    color: blue;
+                }
+
+        .android, .ios-7, .ios-6 {
+            text-decoration: none;
+            font-size: 13px;
+            color: #ffffff;
+            text-align: center;
+            line-height: 45px;
+        }
+
+        .toolbar ul li a.ios-7 {
+            width: 57px;
+        }
+
+        .trial-panel {
+            display: none;
+            position: absolute;
+            padding: 28px 0px 15px;
+            color: white;
+            background: #F05B41;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            line-height: 20px;
+            left: 220px;
+            top: 0px;
+            right: 270px;
+            z-index: 10001;
+            min-width: 420px;
+        }
+
+            .trial-panel a {
+                color: white;
+                font-size: 13px;
+                text-decoration: none;
+                line-height: 20px;
+                padding: 5px 10px;
+                margin-left: 10px;
+                border: solid 1px white;
+                white-space: nowrap;
+            }
+
+                .trial-panel a:hover {
+                    background-color: #cf4e38;
+                }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            bottom: 0;
+            cursor: default;
+            left: 0;
+            opacity: 0;
+            position: fixed;
+            right: 0;
+            top: 0;
+            visibility: hidden;
+            z-index: 1;
+            -webkit-transition: opacity .5s;
+            -moz-transition: opacity .5s;
+            -ms-transition: opacity .5s;
+            -o-transition: opacity .5s;
+            transition: opacity .5s;
+        }
+
+            .overlay:target {
+                visibility: visible;
+                opacity: 1;
+            }
+
+        .popup {
+            background-color: #fff;
+            border: 3px solid #fff;
+            display: inline-block;
+            left: 50%;
+            opacity: 0;
+            padding: 15px;
+            position: fixed;
+            text-align: justify;
+            top: 50%;
+            visibility: hidden;
+            z-index: 10;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            border-radius: 10px;
+            -webkit-transition: opacity .5s, top .5s;
+            -moz-transition: opacity .5s, top .5s;
+            -ms-transition: opacity .5s, top .5s;
+            -o-transition: opacity .5s, top .5s;
+            transition: opacity .5s, top .5s;
+        }
+
+        .overlay:target + .popup {
+            top: 50%;
+            opacity: 1;
+            visibility: visible;
+        }
+    /*</style>*/

@@ -1,0 +1,123 @@
+﻿<div data-options="dxView : { name: 'Profile', title:'@S1_015', toolbar: false } ">
+    <div data-bind="dxCommand: { title: '', id: 'rightmenu', elementAttr:{class:'btnstyle2 menu-colapse'}, onExecute:slideMenu,visible:false}"></div>
+    <div data-bind="dxCommand: { title: '', id: 'overflow' , elementAttr:{class:'logoutmenu',id:'buttonlogout'}, onExecute:function(s,e){logoutmenu(s,e);}}"></div>
+    <div class="ProfileForm" data-options="dxContent : { targetPlaceholder: 'content' } ">
+        <div data-bind="dxScrollView: { }">
+            <!--<div  data-bind="template: { name: 'giohang-template'}"></div>-->
+            <div style="width: 100%;position: absolute;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);">
+                <div class="dathang" style="margin-bottom:0px">
+                    <div class="login screen-dangnhap" style="position: relative;height: 100%;background:rgba(0, 0, 0, 0.2);padding:10px 0px 20px">
+                        <div style="padding-left:25px">
+                            <div class="input">
+                                <input type="tel" placeholder="@S1_018" class="sodienthoai" />
+                                <span><i class="fa fa-phone"></i><span class="buocnhap">*</span></span>
+                            </div>
+                            <div class="input">
+                                <input type="password" placeholder="@S1_022" class="sodienthoai" style="padding-right: 70px!important;" />
+                                <span><i class="fa fa-key"></i><span class="buocnhap">*</span></span>
+                                <!--<div class="resetpass">
+                                    @S1_023<i style="margin-left: 10px;" class="fa fa-refresh" aria-hidden="true"></i>
+                                </div>-->
+                            </div>
+                        </div>
+                        <div style="position: relative;  padding-top: 20px; z-index:1">
+                            <div data-bind="dxButton: {
+                                text: '@S1_025',
+                                onClick: function () {
+                                }
+                            }"></div>
+                            <div style="width:10px;    display: inline-block;"></div>
+                            <div data-bind="dxButton: {
+                                text: '@S1_024',type:'success',
+                                onClick: function () {
+                                }
+                            }"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        <!--<div class="slider gx-sidemenu-inner">
+            <ul class="gx-menu" style="display: block;">
+                <li class="home">
+                    <a href="?home" tabindex="0">
+                        <span class="icon entypo home"></span>
+                        <span class="text">Home</span>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li class="news">
+                    <a href="javascript:void(0)" tabindex="1">
+                        <span class="icon entypo newspaper"></span>
+                        <span class="text">News / Events</span>
+                        <span class="arrow"></span>
+                    </a>
+
+                    <ul class="" style="display: block; position: absolute; background: transparent; width: 286px; top: 0px; right: -286px; height: auto; opacity: 0;">
+                        <li><a href="javascript:" class="back"><span class="icon entypo chevron-left "></span><span class="text">Prev | Back</span></a></li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="javascript:" tabindex="2">
+                                <span class="icon entypo pencil"></span>
+                                <span class="text">New Article</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul style="display: none;">
+                                <li>
+                                    <a href="?article=false" tabindex="3">
+                                        <span class="icon entypo list"></span>
+                                        <span class="text">Next level...</span>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="?article=true" tabindex="4">
+                                        <span class="icon entypo video"></span>
+                                        <span class="text">Another sub element...</span>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="gallery">
+                    <a href="?action=galleries" tabindex="5">
+                        <span class="icon entypo picture"></span>
+                        <span class="text">Galleries</span>
+                    </a>
+                </li>
+                <li class="divider"></li>
+                <li class="users">
+                    <a href="javascript:" tabindex="6">
+                        <span class="icon entypo users"></span>
+                        <span class="text">Users</span>
+                        <span class="arrow"></span>
+                    </a>
+
+                    <ul class="" style="display: block; position: absolute; background: transparent; width: 286px; top: 0px; right: -286px; height: auto; opacity: 0;">
+                        <li><a href="javascript:" class="back"><span class="icon entypo chevron-left "></span><span class="text">Prev | Back</span></a></li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="?login=true" target="_blank" tabindex="7">
+                                <span class="icon entypo user"></span>
+                                <span class="text">Login</span>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+                <li class="divider"></li>
+                <li class="category">
+                    <a href="javascript:" tabindex="8">
+                        <span class="icon entypo folder"></span>
+                        <span class="text">Categories</span>
+                    </a>
+                </li>
+                <li class="divider"></li>
+            </ul>
+        </div>-->
+    </div>
+</div>
