@@ -25,7 +25,12 @@
 
         FB.getLoginStatus(function (response) {
             if (response.status == 'connected') {
-                alert('connect');
+                FB.api("/me/groups", function (response) {
+                    var data = response['data'];
+                    for (var x in data) {
+                        console.log(data[x].name + ' ; ' + data[x].id);
+                    };
+                });
             }
         });
     };
